@@ -1,20 +1,17 @@
 
-•
-java:S1192O"RDefine a constant instead of duplicating this literal "String with id = " 4 times.(‹Ú¿8öÓ„ü1J$f8de7e2a-6958-4e68-a0d9-7160fdd6e724
 ı
-java:S1598"¹This file "Main.java" should be located in "com\akzhol" directory, not in "C:\Users\user\Desktop\Mentoring by Anzor\1-week\src\main\java\com.akzhol"(Do not use dots in directory names).(¥ë’»8úÓ„ü1J$2732b9fa-d777-4974-97e3-e267e1e71a85
-m	java:S106"+Replace this use of System.out by a logger.(çë§æ8ßÖ„ü1J$a5727c0f-53de-4075-9c8e-5b1ca1451999
-r	java:S106"+Replace this use of System.out by a logger.(©á·×øÿÿÿÿ8ßÖ„ü1J$71b783ec-408b-4ee7-adf5-0235cd1477c4
-r	java:S106"+Replace this use of System.out by a logger.(á­Å“üÿÿÿÿ8àÖ„ü1J$302bdfd7-7147-46fc-aed3-e4a031208996
-r	java:S106"+Replace this use of System.out by a logger.(Ø¤¤šúÿÿÿÿ8áÖ„ü1J$e3fc0c00-0e3f-42db-9c5f-f46aa3cff893
-m	java:S106"+Replace this use of System.out by a logger.(ÙÛşò8ãÖ„ü1J$9109bf4e-f5b6-4bad-9c73-0d35af35681e
-m	java:S106"+Replace this use of System.out by a logger.(§÷å8ãÖ„ü1J$cc64a977-4ee5-454e-bcdb-4995706fe2b2
-r	java:S106"+Replace this use of System.out by a logger.(Éİàıÿÿÿÿ8ãÖ„ü1J$6f8fb3ef-3c43-41ad-9e55-b1cbada43eca
-m	java:S106 "+Replace this use of System.out by a logger.(çë§æ8ãÖ„ü1J$e1773050-75b4-4908-bf11-92e0f770f923
-r	java:S106."+Replace this use of System.out by a logger.(µ±ÆÑùÿÿÿÿ8åÖ„ü1J$1e8c1344-7ab7-44f2-a788-fdacc7204c9e
-l	java:S1061"+Replace this use of System.out by a logger.(’†úb8åÖ„ü1J$79597de6-18a7-455e-b250-7e19836fbdb5
-r	java:S1064"+Replace this use of System.out by a logger.(üóüôøÿÿÿÿ8æÖ„ü1J$261ae87e-1d47-4efc-aba8-7ae1fda91326
-m	java:S1067"+Replace this use of System.out by a logger.(Ñ¤ÿÅ8æÖ„ü1J$9dbfa3c9-2ca0-4b9f-a466-18b3e67396ab
-m	java:S106:"+Replace this use of System.out by a logger.(ßÌşŸ8æÖ„ü1J$a76517c8-07b8-44dd-ac5a-6028a15e9fb7
-_
-java:S1116:"Remove this empty statement.(ßÌşŸ8çÖ„ü1J$0f239767-5274-47de-b3c9-4915088ca64f
+java:S1598"¹This file "Main.java" should be located in "com\akzhol" directory, not in "C:\Users\user\Desktop\Mentoring by Anzor\1-week\src\main\java\com.akzhol"(Do not use dots in directory names).(¥ë’»8°¼‹ˆü1J$69d9db03-591c-4ac8-9756-3a785b6a4182
+¯
+java:S1130
+"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(œû¿Ø8ŸÌˆü1J$5645678c-c6ac-4db1-b48b-7f2a0c51a931
+m	java:S106"+Replace this use of System.out by a logger.(çë§æ8¸¼‹ˆü1J$73c4517a-bb37-4195-8854-e419619e26a4
+r	java:S106"+Replace this use of System.out by a logger.(©á·×øÿÿÿÿ8¸¼‹ˆü1J$77b8f542-21a1-43cb-8890-9f9220dc7633
+r	java:S106"+Replace this use of System.out by a logger.(á­Å“üÿÿÿÿ8¸¼‹ˆü1J$3facf7cf-de61-42bb-8ba9-1e509e2c7ba1
+r	java:S106"+Replace this use of System.out by a logger.(Ø¤¤šúÿÿÿÿ8¹¼‹ˆü1J$b02ab6b6-b718-4171-8afc-6121be8acdc2
+m	java:S106"+Replace this use of System.out by a logger.(ÙÛşò8¹¼‹ˆü1J$650de4cd-40f9-41ca-be87-757a3810ef47
+m	java:S106"+Replace this use of System.out by a logger.(§÷å8¹¼‹ˆü1J$fa417cb3-81da-450e-9d7a-603051e3ad3e
+r	java:S106"+Replace this use of System.out by a logger.(Éİàıÿÿÿÿ8¹¼‹ˆü1J$8b862ecb-d6ed-43b5-a000-94e217e3b767
+m	java:S106"+Replace this use of System.out by a logger.(çë§æ8¹¼‹ˆü1J$162c2d55-dd4f-4319-8c98-91e68198f8ba
+r	java:S106"+Replace this use of System.out by a logger.(İÒŒŸıÿÿÿÿ8²Ìˆü1J$7a461d7f-51ea-43da-90f4-90ed0ef6b351
+k
+java:S1068"(Remove this unused "data" private field.(¨é¶«8º¼‹ˆü1J$bf249b0c-1ee4-4d4d-a92b-3b749aeb3b55

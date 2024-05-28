@@ -8,3 +8,7 @@ R
 :
 
 myFile.txt,e\b\eb9d5f1f1874cfa48c5442e6172d45d307267eb9
+U
+%src/main/java/com.akzhol/Storage.java,5\b\5bb86631e6bc8544a8355a96eaf1bed24f0c3443
+[
++src/main/java/com.akzhol/MethodHandler.java,a\8\a86fb66d9035c7753e59de302f8752cc1e6ce96b
