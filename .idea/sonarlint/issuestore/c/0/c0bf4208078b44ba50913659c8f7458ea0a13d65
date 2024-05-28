@@ -1,22 +1,20 @@
 
 •
-java:S1192="RDefine a constant instead of duplicating this literal "String with id = " 4 times.(‹Ú¿8œì´õû1J$c6875f96-4c61-4f7e-9620-11a8c50de237
+java:S1192O"RDefine a constant instead of duplicating this literal "String with id = " 4 times.(‹Ú¿8öÓ„ü1J$f8de7e2a-6958-4e68-a0d9-7160fdd6e724
 ı
-java:S1598"¹This file "Main.java" should be located in "com\akzhol" directory, not in "C:\Users\user\Desktop\Mentoring by Anzor\1-week\src\main\java\com.akzhol"(Do not use dots in directory names).(¥ë’»8Ÿì´õû1J$8dcc298d-6327-49d3-acb7-52dcb393ec2a
-m	java:S106"+Replace this use of System.out by a logger.(çë§æ8Úì´õû1J$eeed26fd-08bf-4bd6-a61c-6481993cd38a
-r	java:S106"+Replace this use of System.out by a logger.(©á·×øÿÿÿÿ8Ûì´õû1J$8fb356eb-a609-418e-9940-2b22b703689f
-r	java:S106"+Replace this use of System.out by a logger.(á­Å“üÿÿÿÿ8Ûì´õû1J$e01011ec-ba37-40a0-9374-b54c5ea55a87
-r	java:S106"+Replace this use of System.out by a logger.(Ø¤¤šúÿÿÿÿ8Ûì´õû1J$3f15c5ac-65c2-46b1-8f72-a1d15f1ea34d
-m	java:S106"+Replace this use of System.out by a logger.(ÙÛşò8Ûì´õû1J$1944609d-2d65-4350-94f2-9a824585a811
-m	java:S106"+Replace this use of System.out by a logger.(§÷å8Ûì´õû1J$61efa9c6-724e-434e-921b-86b923e9875d
-r	java:S106"+Replace this use of System.out by a logger.(Éİàıÿÿÿÿ8Ûì´õû1J$cd285c22-2311-4cb7-b46a-129aa6f95f7c
-m	java:S106"+Replace this use of System.out by a logger.(çë§æ8Ûì´õû1J$4595a228-05f6-4497-9b7f-80233329c88f
-r	java:S106%"+Replace this use of System.out by a logger.(µ±ÆÑùÿÿÿÿ8İì´õû1J$33d6381b-1981-4058-9621-c8f9454a7256
-l	java:S106("+Replace this use of System.out by a logger.(’†úb8ßì´õû1J$110a8ecb-d725-4a1e-9335-c928f6d3b45b
-r	java:S106+"+Replace this use of System.out by a logger.(üóüôøÿÿÿÿ8àì´õû1J$6d8f0fb0-f11e-4b05-b340-b29ec0eb0d7a
-m	java:S106."+Replace this use of System.out by a logger.(Ñ¤ÿÅ8àì´õû1J$861e1112-436a-45a6-9040-f57193fefcb6
-m	java:S1061"+Replace this use of System.out by a logger.(ßÌşŸ8áì´õû1J$23e53221-3a5b-4431-8ec3-f41475ce927a
+java:S1598"¹This file "Main.java" should be located in "com\akzhol" directory, not in "C:\Users\user\Desktop\Mentoring by Anzor\1-week\src\main\java\com.akzhol"(Do not use dots in directory names).(¥ë’»8úÓ„ü1J$2732b9fa-d777-4974-97e3-e267e1e71a85
+m	java:S106"+Replace this use of System.out by a logger.(çë§æ8ßÖ„ü1J$a5727c0f-53de-4075-9c8e-5b1ca1451999
+r	java:S106"+Replace this use of System.out by a logger.(©á·×øÿÿÿÿ8ßÖ„ü1J$71b783ec-408b-4ee7-adf5-0235cd1477c4
+r	java:S106"+Replace this use of System.out by a logger.(á­Å“üÿÿÿÿ8àÖ„ü1J$302bdfd7-7147-46fc-aed3-e4a031208996
+r	java:S106"+Replace this use of System.out by a logger.(Ø¤¤šúÿÿÿÿ8áÖ„ü1J$e3fc0c00-0e3f-42db-9c5f-f46aa3cff893
+m	java:S106"+Replace this use of System.out by a logger.(ÙÛşò8ãÖ„ü1J$9109bf4e-f5b6-4bad-9c73-0d35af35681e
+m	java:S106"+Replace this use of System.out by a logger.(§÷å8ãÖ„ü1J$cc64a977-4ee5-454e-bcdb-4995706fe2b2
+r	java:S106"+Replace this use of System.out by a logger.(Éİàıÿÿÿÿ8ãÖ„ü1J$6f8fb3ef-3c43-41ad-9e55-b1cbada43eca
+m	java:S106 "+Replace this use of System.out by a logger.(çë§æ8ãÖ„ü1J$e1773050-75b4-4908-bf11-92e0f770f923
+r	java:S106."+Replace this use of System.out by a logger.(µ±ÆÑùÿÿÿÿ8åÖ„ü1J$1e8c1344-7ab7-44f2-a788-fdacc7204c9e
+l	java:S1061"+Replace this use of System.out by a logger.(’†úb8åÖ„ü1J$79597de6-18a7-455e-b250-7e19836fbdb5
+r	java:S1064"+Replace this use of System.out by a logger.(üóüôøÿÿÿÿ8æÖ„ü1J$261ae87e-1d47-4efc-aba8-7ae1fda91326
+m	java:S1067"+Replace this use of System.out by a logger.(Ñ¤ÿÅ8æÖ„ü1J$9dbfa3c9-2ca0-4b9f-a466-18b3e67396ab
+m	java:S106:"+Replace this use of System.out by a logger.(ßÌşŸ8æÖ„ü1J$a76517c8-07b8-44dd-ac5a-6028a15e9fb7
 _
-java:S11161"Remove this empty statement.(ßÌşŸ8âì´õû1J$df818492-834f-41b6-8760-2a0b808f448c
-r
-java:S1128"*Remove this unused import 'java.util.Map'.(¼è½Òşÿÿÿÿ8ïì´õû1J$9bc01398-b6dc-44ea-829d-e78635e9b065
+java:S1116:"Remove this empty statement.(ßÌşŸ8çÖ„ü1J$0f239767-5274-47de-b3c9-4915088ca64f

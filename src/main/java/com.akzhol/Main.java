@@ -1,14 +1,22 @@
 package com.akzhol;
 
+import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 import java.util.Scanner;
 
 public class Main {
 
     private static HashMap<Integer, String> data = new HashMap<>();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+
+        Properties properties = new Properties();
+        InputStream input = Main.class.getClassLoader().getResourceAsStream("config.properties");
+        properties.load(input);
+
+        String filePath = properties.getProperty("file.path");
 
         Scanner scanner = new Scanner(System.in);
 
@@ -26,10 +34,11 @@ public class Main {
 
             String userInput = scanner.nextLine();
             if (userInput.equalsIgnoreCase("Exit")){
+                saveToFile(filePath);
                 break;
             }
 
-            String[] parts = userInput.split(" ", 3);
+            String[] parts = userInput.split(" ", 2);
             String command = parts[0];
 
             switch (command.toUpperCase()){
@@ -51,6 +60,15 @@ public class Main {
             }
         }
 
+    }
+
+    private static void saveToFile(String filePath) throws IOException {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+            for (Map.Entry<Integer, String> entry : data.entrySet()) {
+                writer.write(entry.getKey() + "=" + entry.getValue());
+                writer.newLine();
+            }
+        }
     }
 
     private static String handleDelete(String[] parts) {
@@ -81,6 +99,7 @@ public class Main {
 
     private static String handleGet(String[] parts) {
         if (parts.length == 1) {
+
             return data.toString();
         } else if (parts.length == 2) {
             int id = Integer.parseInt(parts[1]);
