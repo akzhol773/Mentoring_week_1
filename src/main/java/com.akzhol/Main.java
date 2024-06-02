@@ -9,26 +9,36 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
+        Validator validator = new Validator();
+        Parser parser = new Parser(validator);
         Scanner scanner = new Scanner(System.in);
-        MethodHandler methodHandler = new MethodHandler();
+        Storage storage = new Storage();
+        Service service = new Service(storage);
+
+        System.out.println("-------------------------------------------------------------------------");
+        System.out.println("| Program usage:                                                         |");
+        System.out.println("| Command to create a string: CREATE {some_string}                       |");
+        System.out.println("| Command to get a string: GET or GET {id}                               |");
+        System.out.println("| Command to update a string: UPDATE {id} {new_string_value}             |");
+        System.out.println("| Command to delete a string: DELETE {id}                                |");
+        System.out.println("| Enter 'Exit' to stop the program.                                      |");
+        System.out.println("-------------------------------------------------------------------------");
 
         while(true){
 
-            System.out.println("-------------------------------------------------------------------------");
-            System.out.println("| Program usage:                                                         |");
-            System.out.println("| Command to create a string: CREATE {some_string}                       |");
-            System.out.println("| Command to get a string: GET or GET {id}                               |");
-            System.out.println("| Command to update a string: UPDATE {id} {new_string_value}             |");
-            System.out.println("| Command to delete a string: DELETE {id}                                |");
-            System.out.println("| Enter 'Exit' to stop the program.                                      |");
-            System.out.println("-------------------------------------------------------------------------");
+            try{
+                String userInput = scanner.nextLine();
+                if (userInput.equalsIgnoreCase("Exit")){
+                    break;
+                }
+                Command command = parser.parse(userInput);
+                service.execute(command);
 
-            String userInput = scanner.nextLine();
-            if (userInput.equalsIgnoreCase("Exit")){
-                break;
+            }catch (InvalidCommandException | IdNotFoundException exception){
+                System.out.println(exception.getMessage());
             }
 
-            System.out.println(methodHandler.handleCommand(userInput));
+
 
         }
 

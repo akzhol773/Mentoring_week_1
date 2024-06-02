@@ -1,17 +1,17 @@
 
 ı
-java:S1598"¹This file "Main.java" should be located in "com\akzhol" directory, not in "C:\Users\user\Desktop\Mentoring by Anzor\1-week\src\main\java\com.akzhol"(Do not use dots in directory names).(¥ë’»8°¼‹ˆü1J$69d9db03-591c-4ac8-9756-3a785b6a4182
+java:S1598"¹This file "Main.java" should be located in "com\akzhol" directory, not in "C:\Users\user\Desktop\Mentoring by Anzor\1-week\src\main\java\com.akzhol"(Do not use dots in directory names).(¥ë’»8òæÅ¿ı1J$fa024886-a81f-4ae3-8cce-57df48710d76
 ¯
 java:S1130
-"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(œû¿Ø8ŸÌˆü1J$5645678c-c6ac-4db1-b48b-7f2a0c51a931
-m	java:S106"+Replace this use of System.out by a logger.(çë§æ8¸¼‹ˆü1J$73c4517a-bb37-4195-8854-e419619e26a4
-r	java:S106"+Replace this use of System.out by a logger.(©á·×øÿÿÿÿ8¸¼‹ˆü1J$77b8f542-21a1-43cb-8890-9f9220dc7633
-r	java:S106"+Replace this use of System.out by a logger.(á­Å“üÿÿÿÿ8¸¼‹ˆü1J$3facf7cf-de61-42bb-8ba9-1e509e2c7ba1
-r	java:S106"+Replace this use of System.out by a logger.(Ø¤¤šúÿÿÿÿ8¹¼‹ˆü1J$b02ab6b6-b718-4171-8afc-6121be8acdc2
-m	java:S106"+Replace this use of System.out by a logger.(ÙÛşò8¹¼‹ˆü1J$650de4cd-40f9-41ca-be87-757a3810ef47
-m	java:S106"+Replace this use of System.out by a logger.(§÷å8¹¼‹ˆü1J$fa417cb3-81da-450e-9d7a-603051e3ad3e
-r	java:S106"+Replace this use of System.out by a logger.(Éİàıÿÿÿÿ8¹¼‹ˆü1J$8b862ecb-d6ed-43b5-a000-94e217e3b767
-m	java:S106"+Replace this use of System.out by a logger.(çë§æ8¹¼‹ˆü1J$162c2d55-dd4f-4319-8c98-91e68198f8ba
-r	java:S106"+Replace this use of System.out by a logger.(İÒŒŸıÿÿÿÿ8²Ìˆü1J$7a461d7f-51ea-43da-90f4-90ed0ef6b351
+"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(œû¿Ø8ÿæÅ¿ı1J$397f372d-7fec-4e3f-89be-4ccf00a00f45
+m	java:S106"+Replace this use of System.out by a logger.(çë§æ8ƒçÅ¿ı1J$8170ea88-211f-4185-89ff-f1b87ddd4cd0
+r	java:S106"+Replace this use of System.out by a logger.(©á·×øÿÿÿÿ8„çÅ¿ı1J$a2e19ac6-ee1e-4c3b-846c-a16f0db1af4d
+r	java:S106"+Replace this use of System.out by a logger.(á­Å“üÿÿÿÿ8„çÅ¿ı1J$d1f4ec28-0013-43ea-9f14-7239b3360b76
+r	java:S106"+Replace this use of System.out by a logger.(Ø¤¤šúÿÿÿÿ8„çÅ¿ı1J$e7bae72e-e7ec-41c8-b9b7-d52aaeb9d37b
+m	java:S106"+Replace this use of System.out by a logger.(ÙÛşò8„çÅ¿ı1J$bb39791e-cb38-462d-8a57-2b8e1c88b691
+m	java:S106"+Replace this use of System.out by a logger.(§÷å8…çÅ¿ı1J$83c719ee-a8dc-49ad-be31-df85a72cfef8
+r	java:S106"+Replace this use of System.out by a logger.(Éİàıÿÿÿÿ8…çÅ¿ı1J$6ce9077c-de77-47c6-9eb3-960fc6abd0f7
+m	java:S106"+Replace this use of System.out by a logger.(çë§æ8…çÅ¿ı1J$cf28d7e4-3312-4044-83e9-c7b5a452fa9d
+m	java:S106&"+Replace this use of System.out by a logger.(ñ·¤¬8ˆçÅ¿ı1J$828eed06-a672-448a-ba1c-5286009c9778
 k
-java:S1068"(Remove this unused "data" private field.(¨é¶«8º¼‹ˆü1J$bf249b0c-1ee4-4d4d-a92b-3b749aeb3b55
+java:S1068"(Remove this unused "data" private field.(¨é¶«8‰çÅ¿ı1J$238be8e5-c229-4bce-a717-5ebde04288db

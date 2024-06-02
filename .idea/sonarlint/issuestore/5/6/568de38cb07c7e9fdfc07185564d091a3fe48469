@@ -1,0 +1,13 @@
+
+‚
+java:S1598"¾This file "Validator.java" should be located in "com\akzhol" directory, not in "C:\Users\user\Desktop\Mentoring by Anzor\1-week\src\main\java\com.akzhol"(Do not use dots in directory names).(¥ë’»8ïĞĞ½ı1J$dc8df4cb-a50f-4e59-9d0c-4f67276e8014
+«
+java:S1157#"cReplace these toUpperCase()/toLowerCase() and equals() calls with a single equalsIgnoreCase() call.(µı÷şÿÿÿÿ8Ş•§¿ı1J$9936a339-71e1-45fb-8e4f-95c6f51e6779
+«
+java:S1157)"cReplace these toUpperCase()/toLowerCase() and equals() calls with a single equalsIgnoreCase() call.(Ú±€«şÿÿÿÿ8Î¸§¿ı1J$acb7c374-07f5-4b09-97d4-88931aada8e4
+”
+java:S18711"LThis branch's code block is the same as the block for the branch on line 47.(©İ…øÿÿÿÿ8ÚœÑ¾ı1J$9a5de204-a4a1-488c-8151-4cd84e7adab6
+«
+java:S11571"cReplace these toUpperCase()/toLowerCase() and equals() calls with a single equalsIgnoreCase() call.(©İ…øÿÿÿÿ8Œæ§¿ı1J$fca57d5c-1a3c-410a-a60c-66ced910d22f
+«
+java:S1157;"cReplace these toUpperCase()/toLowerCase() and equals() calls with a single equalsIgnoreCase() call.(á²ÔÄÿÿÿÿÿ8ß¨¿ı1J$fda62ce3-c978-4519-99be-07fd605d8df5
