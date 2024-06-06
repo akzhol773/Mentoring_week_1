@@ -38,22 +38,4 @@ public class Person {
                 ", age=" + age +
                 '}';
     }
-
-    public static void main(String[] args) {
-        try {
-            ObjectMapper objectMapper = new ObjectMapper();
-
-            Person person = new Person("bob", 25);
-
-            String jsonString = objectMapper.writeValueAsString(person);
-            System.out.println("JSON String: " + jsonString);
-
-            Person deserializedPerson = objectMapper.readValue(jsonString, Person.class);
-            System.out.println("Deserialized Person: " + deserializedPerson);
-            System.out.println(person.toString());
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }

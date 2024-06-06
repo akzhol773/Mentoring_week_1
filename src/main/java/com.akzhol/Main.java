@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
-    private static HashMap<Integer, String> data = new HashMap<>();
 
     public static void main(String[] args) throws IOException {
 
