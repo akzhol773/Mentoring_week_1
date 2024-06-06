@@ -11,7 +11,7 @@ public class Service {
     public void execute(Command command){
         switch (command.getCommandType()){
             case CREATE:
-                storage.create(command.getValue());
+                storage.create(command.getPerson());
                 break;
             case GET:
                 if(command.getId()==null){
@@ -21,7 +21,7 @@ public class Service {
                 }
                 break;
             case UPDATE:
-                storage.updateData(command.getId(), command.getValue());
+                storage.updateData(command.getId(), command.getPerson());
                 break;
             case DELETE:
                 storage.deleteData(command.getId());

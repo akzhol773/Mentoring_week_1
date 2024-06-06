@@ -1,11 +1,20 @@
 package com.akzhol;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class Parser {
 
     private final Validator validator;
 
-    public Parser(Validator validator) {
+    private final ObjectMapper objectMapper;
+
+    public Parser(Validator validator, ObjectMapper objectMapper) {
         this.validator = validator;
+        this.objectMapper = objectMapper;
     }
 
 
@@ -28,7 +37,7 @@ public class Parser {
 
             case CREATE:
                 commandObject.setCommandType(Command.CommandType.CREATE);
-                commandObject.setValue(getValueFromArray(parts, 1, parts.length));
+                commandObject.setPerson(parseStringValue(parts[1], Integer.parseInt(parts[2])));
                 break;
 
             case GET:
@@ -43,7 +52,7 @@ public class Parser {
             case UPDATE:
                 commandObject.setCommandType(Command.CommandType.UPDATE);
                 commandObject.setId(Integer.parseInt(parts[1]));
-                commandObject.setValue(getValueFromArray(parts, 2, parts.length));
+                commandObject.setPerson(parseStringValue(parts[2], Integer.parseInt(parts[3])));
                 break;
             case DELETE:
                 commandObject.setCommandType(Command.CommandType.DELETE);
@@ -55,16 +64,44 @@ public class Parser {
       return commandObject;
     }
 
-    private String getValueFromArray(String[] array, int start, int end) {
-        validator.validateArray(array, start, end);
-        StringBuilder result = new StringBuilder();
-        for (int i = start; i < end; i++) {
-            result.append(array[i]);
-            if (i < end - 1) {
-                result.append(" ");
-            }
+    private Person parseStringValue(String name, Integer age) {
+        String commaRemovedName = name.replace(",", "");
+
+        String jsonString = String.format("{\"name\": \"%s\", \"age\": %d}", commaRemovedName, age);
+
+        try {
+            return objectMapper.readValue(jsonString, Person.class);
+        } catch (JsonProcessingException e) {
+            throw new InvalidJsonException(e.getMessage());
         }
-        return result.toString();
+    }
+
+    public String getJsonString(Person person){
+        try{
+            return objectMapper.writeValueAsString(person);
+        }catch (JsonProcessingException e){
+            throw new InvalidJsonException(e.getMessage());
+        }
+    }
+
+    public String parseAllData(HashMap<Integer, Person> data) {
+        StringBuilder jsonBuilder = new StringBuilder();
+        jsonBuilder.append("{");
+
+        for (Map.Entry<Integer, Person> entry : data.entrySet()) {
+            Integer key = entry.getKey();
+            Person person = entry.getValue();
+            String jsonString = getJsonString(person);
+            jsonBuilder.append("\"").append(key).append("\":").append(jsonString).append(",");
+        }
+        if (jsonBuilder.length() > 1) {
+            jsonBuilder.setLength(jsonBuilder.length() - 1);
+        }
+
+        jsonBuilder.append("}");
+        String result = jsonBuilder.toString();
+        System.out.println(result);
+        return result;
     }
 
 

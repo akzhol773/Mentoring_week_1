@@ -1,24 +1,25 @@
 package com.akzhol;
 
-import java.io.*;
-import java.util.HashMap;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
         Validator validator = new Validator();
-        Parser parser = new Parser(validator);
+        ObjectMapper objectMapper = new ObjectMapper();
+        Parser parser = new Parser(validator, objectMapper);
         Scanner scanner = new Scanner(System.in);
-        Storage storage = new Storage();
+        Storage storage = new Storage(parser);
         Service service = new Service(storage);
 
         System.out.println("-------------------------------------------------------------------------");
         System.out.println("| Program usage:                                                         |");
-        System.out.println("| Command to create a string: CREATE {some_string}                       |");
+        System.out.println("| Command to create a string: CREATE {name, age}                         |");
         System.out.println("| Command to get a string: GET or GET {id}                               |");
-        System.out.println("| Command to update a string: UPDATE {id} {new_string_value}             |");
+        System.out.println("| Command to update a string: UPDATE {id} {name, age}                    |");
         System.out.println("| Command to delete a string: DELETE {id}                                |");
         System.out.println("| Enter 'Exit' to stop the program.                                      |");
         System.out.println("-------------------------------------------------------------------------");
@@ -36,9 +37,6 @@ public class Main {
             }catch (InvalidCommandException | IdNotFoundException exception){
                 System.out.println(exception.getMessage());
             }
-
-
-
         }
 
     }

@@ -12,7 +12,7 @@ public class Command {
 
     private CommandType commandType;
     private Integer id;
-    private String value;
+    private Person person;
 
     public Command() {
 
@@ -26,8 +26,8 @@ public class Command {
         this.id = id;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public void setPerson(Person person) {
+        this.person = person;
     }
 
 
@@ -39,8 +39,8 @@ public class Command {
         return id;
     }
 
-    public String getValue() {
-        return value;
+    public Person getPerson() {
+        return person;
     }
 
 

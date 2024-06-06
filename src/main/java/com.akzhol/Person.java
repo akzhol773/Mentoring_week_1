@@ -1,7 +1,4 @@
 package com.akzhol;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 public class Person {
 
     private String name;
