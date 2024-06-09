@@ -1,28 +1,34 @@
 package com.akzhol;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-import java.io.IOException;
 
 public class Validator {
+   private final ObjectMapper objectMapper;
+    public Validator(ObjectMapper objectMapper) {
+        this.objectMapper = objectMapper;
+    }
 
-    public void validate(String userInput){
+    public void validate(String userInput) {
 
-        if(userInput == null || userInput.isEmpty()){
+        if (userInput == null || userInput.isEmpty()) {
             throw new InvalidCommandException("Invalid command: " + userInput);
         }
 
         String[] parts = userInput.split(" ");
 
-        switch (parts[0].toUpperCase()){
+        switch (parts[0].toUpperCase()) {
             case "GET":
                 validateGet(parts);
                 break;
             case "CREATE":
-                validateCreate(parts);
+                validateCreate(userInput);
                 break;
             case "UPDATE":
-                validateUpdate(parts);
+                validateUpdate(userInput);
                 break;
             case "DELETE":
                 validateDelete(parts);
@@ -45,53 +51,52 @@ public class Validator {
         }
 
         if (isNotInt(parts[1])) {
-           throwIllegalCommandException("The second part must be a valid integer.");
+            throwIllegalCommandException("The second part must be a valid integer.");
         }
     }
 
 
-    public void validateUpdate(String[] parts) {
-        if (parts == null || parts.length != 4) {
-            throwIllegalCommandException("Command parts are missing or incomplete.");
-        }
+    public void validateUpdate(String userInput) {
+
+        String[] parts = userInput.split(" ");
 
         if (!"UPDATE".equalsIgnoreCase(parts[0])) {
-           throwIllegalCommandException("Command must start with UPDATE.");
+            throwIllegalCommandException("Command must start with UPDATE.");
         }
 
-        if (isNotInt(parts[1]) || isNotInt(parts[3])) {
-            throwIllegalCommandException("The second and fourth parts must be a valid integer.");
+        if (isNotInt(parts[1])) {
+            throwIllegalCommandException("The second part must be a valid integer.");
         }
 
-        if (isValidJsonString(parts[2], Integer.parseInt(parts[3]))) {
-            throwIllegalCommandException("Invalid command");
+        String jsonString = getJsonValue(userInput);
+        try {
+            new JSONObject(jsonString);
+            objectMapper.readValue(jsonString, Person.class);
+        } catch (JSONException | JsonProcessingException e) {
+            throwIllegalCommandException("Invalid JSON data for Person object creation.");
         }
     }
 
 
-    public void validateCreate(String[] parts) {
-        if (isNotInt(parts[2])) {
-            throwIllegalCommandException("The third part must be a valid integer.");
-        }
+    public void validateCreate(String userInput) {
 
-        if (parts == null || parts.length != 3) {
-            throwIllegalCommandException("Command parts are missing or incorrect.");
-        }
+        String[] parts = userInput.split(" ");
 
         if (!"CREATE".equalsIgnoreCase(parts[0])) {
-            throwIllegalCommandException("Command must start with CREATE.");
+            throw new IllegalArgumentException("Command must start with CREATE.");
         }
 
-        if (isValidJsonString(parts[1], Integer.parseInt(parts[2]))) {
-            throwIllegalCommandException("Invalid command.");
+        String jsonString = getJsonValue(userInput);
+
+        try {
+            new JSONObject(jsonString);
+            objectMapper.readValue(jsonString, Person.class);
+        } catch (JSONException | JsonProcessingException e) {
+            throwIllegalCommandException("Invalid JSON data for Person object creation.");
         }
-
-
-
-
     }
 
-    private void validateGet(String[] parts){
+    private void validateGet(String[] parts) {
         if (parts.length > 2) {
             throwIllegalCommandException("Invalid command.");
         }
@@ -119,13 +124,29 @@ public class Validator {
         return false;
     }
 
-    private boolean isValidJsonString(String name, Integer age) {
-        String jsonString = String.format("{\"name\": \"%s\", \"age\": %d}", name, age);
+    private boolean isValidJson(String jsonString) {
         try {
-            new ObjectMapper().readValue(jsonString, Person.class);
-        } catch (IOException e) {
-            return true;
+            new JSONObject(jsonString);
+            objectMapper.readValue(jsonString, Person.class);
+        } catch (JSONException | JsonProcessingException e) {
+            return false;
         }
-        return false;
+        return true;
     }
+
+    private String getJsonValue(String userInput) {
+        int jsonStartIndex = userInput.indexOf("{");
+        if (jsonStartIndex == -1) {
+            throwIllegalCommandException("Invalid command format. Missing opening curly brace.");
+        }
+
+        int jsonEndIndex = userInput.lastIndexOf("}");
+        if (jsonEndIndex == -1) {
+            throwIllegalCommandException("Invalid command format. Missing closing curly brace.");
+        }
+
+        return userInput.substring(jsonStartIndex, jsonEndIndex + 1);
+    }
+
+
 }

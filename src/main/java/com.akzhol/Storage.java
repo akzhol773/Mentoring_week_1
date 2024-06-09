@@ -2,52 +2,53 @@ package com.akzhol;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Storage {
-    private final Parser parser;
-    public Storage(Parser parser) {
-        this.parser = parser;
-    }
     private HashMap<Integer, Person> data = new HashMap<>();
+    private final AtomicInteger idGenerator;
+
+    public Storage(AtomicInteger idGenerator) {
+        this.idGenerator = idGenerator;
+    }
 
     public void create(Person person){
-        Integer id = data.size()+1;
+        Integer id = idGenerator.incrementAndGet();
         data.put(id, person);
-        System.out.println("Person saved with id = " + id);
     }
 
-    public boolean checkPresence(int id) {
-        return !data.containsKey(id);
+    public HashMap<Integer, Person> getAllData() {
+       return data;
     }
 
-
-    public String getAllData() {
-       return parser.parseAllData(data);
-    }
-
-    public String getById(int id) {
-        if(checkPresence(id)){
+    public Person getById(int id) {
+        if(!data.containsKey(id)){
             throw new IdNotFoundException("Given ID not found");
         }
-        System.out.println(parser.getJsonString(data.get(id)));
-        return parser.getJsonString(data.get(id));
+        return data.get(id);
     }
-
 
     public void updateData(int id, Person person) {
-        if(checkPresence(id)){
+        if(!data.containsKey(id)){
             throw new IdNotFoundException("Given ID not found");
         }
         data.put(id, person);
-        System.out.println("String with id = " + id + " updated");
     }
 
     public void deleteData(int id) {
-        if(checkPresence(id)){
+        if(!data.containsKey(id)){
             throw new IdNotFoundException("Given ID not found");
         }
         data.remove(id);
-        System.out.println("String with id = " + id + " deleted");
+    }
+
+    public Integer getPersonId(Person person){
+        for (Map.Entry<Integer, Person> entry : data.entrySet()) {
+            if (entry.getValue().equals(person)) {
+                return entry.getKey();
+            }
+        }
+        return null;
     }
 
 }
