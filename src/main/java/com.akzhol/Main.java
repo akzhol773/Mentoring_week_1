@@ -1,8 +1,6 @@
 package com.akzhol;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.json.JSONObject;
-
 import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicInteger;
 

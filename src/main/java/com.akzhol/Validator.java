@@ -124,15 +124,6 @@ public class Validator {
         return false;
     }
 
-    private boolean isValidJson(String jsonString) {
-        try {
-            new JSONObject(jsonString);
-            objectMapper.readValue(jsonString, Person.class);
-        } catch (JSONException | JsonProcessingException e) {
-            return false;
-        }
-        return true;
-    }
 
     private String getJsonValue(String userInput) {
         int jsonStartIndex = userInput.indexOf("{");
