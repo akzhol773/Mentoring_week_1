@@ -12,9 +12,8 @@ public class Main {
         Validator validator = new Validator(objectMapper);
         Parser parser = new Parser(validator, objectMapper);
         Scanner scanner = new Scanner(System.in);
-        AtomicInteger atomicInteger = new AtomicInteger();
-        Storage storage = new Storage(atomicInteger);
-        Service service = new Service(storage, objectMapper);
+        PersonDAO personDAO = new PersonDAO();
+        Service service = new Service(objectMapper, personDAO);
 
         System.out.println("-------------------------------------------------------------------------");
         System.out.println("| Program usage:                                                         |");

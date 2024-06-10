@@ -3,16 +3,25 @@ package com.akzhol;
 import java.util.Objects;
 
 public class Person {
-
+    private int id;
     private String name;
     private Integer age;
 
-    public Person(String name, Integer age) {
+    public Person(int id, String name, Integer age) {
+        this.id = id;
         this.name = name;
         this.age = age;
     }
 
     public Person() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -34,21 +43,9 @@ public class Person {
     @Override
     public String toString() {
         return "Person{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", age=" + age +
                 '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Person person = (Person) o;
-        return Objects.equals(name, person.name) && Objects.equals(age, person.age);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, age);
     }
 }
