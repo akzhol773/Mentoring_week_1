@@ -1,4 +1,7 @@
-package com.akzhol;
+package com.akzhol.dao;
+
+import com.akzhol.exception.DatabaseAccessException;
+import com.akzhol.model.Person;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,14 +20,14 @@ public class PersonDAO {
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
                     Person person = new Person();
-                    person.setId(resultSet.getInt("id"));
+                    person.setId(resultSet.getLong("id"));
                     person.setName(resultSet.getString("name"));
                     person.setAge(resultSet.getInt("age"));
                     return person;
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new DatabaseAccessException("Error fetching a person from the database. Please, try again.", e);
         }
         return null;
     }
@@ -42,7 +45,7 @@ public class PersonDAO {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new DatabaseAccessException("Error create a person. Please, try again.", e);
         }
         return -1;
     }
@@ -57,7 +60,7 @@ public class PersonDAO {
             statement.setInt(3, id);
             statement.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new DatabaseAccessException("Error updating a person. Please, try again.", e);
         }
     }
 
@@ -69,7 +72,7 @@ public class PersonDAO {
             statement.setInt(1, id);
             statement.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new DatabaseAccessException("Error deleting a person from the database", e);
         }
     }
 
@@ -84,15 +87,14 @@ public class PersonDAO {
 
             while (resultSet.next()) {
                 Person person = new Person();
-                person.setId(resultSet.getInt("id"));
+                person.setId(resultSet.getLong("id"));
                 person.setName(resultSet.getString("name"));
                 person.setAge(resultSet.getInt("age"));
                 persons.add(person);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new DatabaseAccessException("Error fetching persons from the database", e);
         }
-
         return persons;
     }
 

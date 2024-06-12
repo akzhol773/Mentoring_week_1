@@ -1,13 +1,13 @@
-package com.akzhol;
+package com.akzhol.model;
 
 import java.util.Objects;
 
 public class Person {
-    private int id;
+    private Long id;
     private String name;
     private Integer age;
 
-    public Person(int id, String name, Integer age) {
+    public Person(Long id, String name, Integer age) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -16,11 +16,11 @@ public class Person {
     public Person() {
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

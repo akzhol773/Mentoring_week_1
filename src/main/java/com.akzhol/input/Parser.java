@@ -1,5 +1,9 @@
-package com.akzhol;
+package com.akzhol.input;
 
+import com.akzhol.enums.CommandType;
+import com.akzhol.exception.InvalidCommandException;
+import com.akzhol.exception.InvalidJsonException;
+import com.akzhol.model.Person;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -17,37 +21,37 @@ public class Parser {
 
         validator.validate(userInput);
 
-        String[] parts = userInput.split(" ");
+        var parts = userInput.split(" ");
 
-        String command = parts[0];
+        var command = parts[0];
 
-        Command.CommandType actions = Command.CommandType.valueOf(command.toUpperCase());
+        var actions = CommandType.valueOf(command.toUpperCase());
 
         Command commandObject = new Command();
 
         switch (actions){
 
             case CREATE:
-                commandObject.setCommandType(Command.CommandType.CREATE);
+                commandObject.setCommandType(CommandType.CREATE);
                 commandObject.setPerson(parseJson(getJsonValue(userInput)));
                 break;
 
             case GET:
                if(parts.length == 1){
-                   commandObject.setCommandType(Command.CommandType.GET);
+                   commandObject.setCommandType(CommandType.GET);
 
                }else {
-                   commandObject.setCommandType(Command.CommandType.GET);
+                   commandObject.setCommandType(CommandType.GET);
                    commandObject.setId(Integer.parseInt(parts[1]));
                }
                break;
             case UPDATE:
-                commandObject.setCommandType(Command.CommandType.UPDATE);
+                commandObject.setCommandType(CommandType.UPDATE);
                 commandObject.setId(Integer.parseInt(parts[1]));
                 commandObject.setPerson(parseJson(getJsonValue(userInput)));
                 break;
             case DELETE:
-                commandObject.setCommandType(Command.CommandType.DELETE);
+                commandObject.setCommandType(CommandType.DELETE);
                 commandObject.setId(Integer.parseInt(parts[1]));
                 break;
             default:

@@ -1,8 +1,16 @@
 package com.akzhol;
 
+import com.akzhol.dao.PersonDAO;
+import com.akzhol.exception.DatabaseAccessException;
+import com.akzhol.exception.IdNotFoundException;
+import com.akzhol.exception.InvalidCommandException;
+import com.akzhol.exception.InvalidJsonException;
+import com.akzhol.input.Command;
+import com.akzhol.input.Parser;
+import com.akzhol.input.Validator;
+import com.akzhol.service.Service;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.Scanner;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class Main {
 
@@ -34,7 +42,7 @@ public class Main {
                 Command command = parser.parse(userInput);
                 service.execute(command);
 
-            }catch (InvalidCommandException | IdNotFoundException exception){
+            }catch (InvalidCommandException | IdNotFoundException | InvalidJsonException | DatabaseAccessException exception){
                 System.out.println(exception.getMessage());
             }
         }

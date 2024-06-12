@@ -1,4 +1,4 @@
-package com.akzhol;
+package com.akzhol.exception;
 
 public class IdNotFoundException extends RuntimeException{
     public IdNotFoundException(String message) {

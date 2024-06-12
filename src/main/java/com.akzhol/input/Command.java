@@ -1,15 +1,9 @@
-package com.akzhol;
+package com.akzhol.input;
+
+import com.akzhol.enums.CommandType;
+import com.akzhol.model.Person;
 
 public class Command {
-
-    enum CommandType{
-        CREATE,
-        GET,
-        UPDATE,
-        DELETE
-
-    }
-
     private CommandType commandType;
     private Integer id;
     private Person person;
@@ -42,6 +36,5 @@ public class Command {
     public Person getPerson() {
         return person;
     }
-
 
 }

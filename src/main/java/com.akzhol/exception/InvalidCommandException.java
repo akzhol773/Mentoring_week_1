@@ -1,4 +1,4 @@
-package com.akzhol;
+package com.akzhol.exception;
 
 public class InvalidCommandException extends RuntimeException{
     public InvalidCommandException(String message) {

@@ -1,5 +1,8 @@
-package com.akzhol;
+package com.akzhol.service;
 
+import com.akzhol.input.Command;
+import com.akzhol.dao.PersonDAO;
+import com.akzhol.exception.InvalidCommandException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -34,7 +37,7 @@ public class Service {
     }
 
     private void deletePerson(Command command) {
-        int id = command.getId();
+        var id = command.getId();
         var person = personDAO.getPersonById(id);
         if (person!= null){
             personDAO.deletePersonById(command.getId());
@@ -45,7 +48,7 @@ public class Service {
     }
 
     private void updatePerson(Command command) {
-        int id = command.getId();
+        var id = command.getId();
         var person = personDAO.getPersonById(id);
         if (person!= null){
             personDAO.updatePerson(command.getPerson(), id);
