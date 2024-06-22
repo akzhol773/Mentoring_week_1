@@ -3,6 +3,7 @@ package com.akzhol.input;
 import com.akzhol.enums.CommandType;
 import com.akzhol.exception.InvalidCommandException;
 import com.akzhol.exception.InvalidJsonException;
+import com.akzhol.model.Command;
 import com.akzhol.model.Person;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -66,7 +67,7 @@ public class Parser {
             throw new InvalidJsonException(e.getMessage());
         }
     }
-    public String getJsonValue(String userInput) {
+    private String getJsonValue(String userInput) {
         int jsonStartIndex = userInput.indexOf("{");
         return userInput.substring(jsonStartIndex);
     }

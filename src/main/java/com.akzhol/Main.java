@@ -5,7 +5,7 @@ import com.akzhol.exception.DatabaseAccessException;
 import com.akzhol.exception.IdNotFoundException;
 import com.akzhol.exception.InvalidCommandException;
 import com.akzhol.exception.InvalidJsonException;
-import com.akzhol.input.Command;
+import com.akzhol.model.Command;
 import com.akzhol.input.Parser;
 import com.akzhol.input.Validator;
 import com.akzhol.service.Service;
@@ -27,7 +27,7 @@ public class Main {
         System.out.println("| Program usage:                                                         |");
         System.out.println("| Command to create a string: CREATE {some JSON value}                   |");
         System.out.println("| Command to get a string: GET or GET {id}                               |");
-        System.out.println("| Command to update a string: UPDATE {id} {some JSON value}                    |");
+        System.out.println("| Command to update a string: UPDATE {id} {some JSON value}              |");
         System.out.println("| Command to delete a string: DELETE {id}                                |");
         System.out.println("| Enter 'Exit' to stop the program.                                      |");
         System.out.println("-------------------------------------------------------------------------");

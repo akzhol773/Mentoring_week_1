@@ -1,7 +1,6 @@
-package com.akzhol.input;
+package com.akzhol.model;
 
 import com.akzhol.enums.CommandType;
-import com.akzhol.model.Person;
 
 public class Command {
     private CommandType commandType;
@@ -10,6 +9,12 @@ public class Command {
 
     public Command() {
 
+    }
+
+    public Command(CommandType commandType, Integer id, Person person) {
+        this.commandType = commandType;
+        this.id = id;
+        this.person = person;
     }
 
     public void setCommandType(CommandType commandType) {

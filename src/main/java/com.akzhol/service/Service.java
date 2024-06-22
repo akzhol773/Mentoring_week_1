@@ -1,6 +1,6 @@
 package com.akzhol.service;
 
-import com.akzhol.input.Command;
+import com.akzhol.model.Command;
 import com.akzhol.dao.PersonDAO;
 import com.akzhol.exception.InvalidCommandException;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -36,7 +36,7 @@ public class Service {
         }
     }
 
-    private void deletePerson(Command command) {
+    public void deletePerson(Command command) {
         var id = command.getId();
         var person = personDAO.getPersonById(id);
         if (person!= null){
@@ -47,7 +47,7 @@ public class Service {
         }
     }
 
-    private void updatePerson(Command command) {
+    public void updatePerson(Command command) {
         var id = command.getId();
         var person = personDAO.getPersonById(id);
         if (person!= null){
@@ -58,7 +58,7 @@ public class Service {
         }
     }
 
-    private String getPerson(Command command) {
+    public String getPerson(Command command) {
         String jsonValue = null;
         try{
             if(command.getId()==null){
@@ -87,12 +87,13 @@ public class Service {
         return jsonValue;
     }
 
-    private void createPerson(Command command) {
+    public Integer createPerson(Command command) {
         var id = personDAO.createPerson(command.getPerson());
         if(id != -1){
             System.out.printf("The person record has been created with id =  %d", id);
         }else {
             System.out.println("There occurred an error. Please, try again.");
         }
+        return id;
     }
 }

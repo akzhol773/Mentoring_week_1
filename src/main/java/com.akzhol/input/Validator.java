@@ -85,7 +85,7 @@ public class Validator {
         String[] parts = userInput.split(" ");
 
         if (!"CREATE".equalsIgnoreCase(parts[0])) {
-            throw new IllegalArgumentException("Command must start with CREATE.");
+            throwIllegalCommandException("Command must start with CREATE.");
         }
 
         String jsonString = getJsonValue(userInput);
@@ -98,7 +98,7 @@ public class Validator {
         }
     }
 
-    private void validateGet(String[] parts) {
+    public void validateGet(String[] parts) {
         if (parts.length > 2) {
             throwIllegalCommandException("Invalid command.");
         }
@@ -130,12 +130,12 @@ public class Validator {
     private String getJsonValue(String userInput) {
         int jsonStartIndex = userInput.indexOf("{");
         if (jsonStartIndex == -1) {
-            throwIllegalCommandException("Invalid command format. Missing opening curly brace.");
+            throwIllegalCommandException("Invalid JSON.");
         }
 
         int jsonEndIndex = userInput.lastIndexOf("}");
         if (jsonEndIndex == -1) {
-            throwIllegalCommandException("Invalid command format. Missing closing curly brace.");
+            throwIllegalCommandException("Invalid JSON.");
         }
 
         return userInput.substring(jsonStartIndex, jsonEndIndex + 1);
